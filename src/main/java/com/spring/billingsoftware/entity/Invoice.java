@@ -1,18 +1,22 @@
 package com.spring.billingsoftware.entity;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
 
 public class Invoice {
 
-    private  int  invoiceId;
-    private LocalDate invoiceDate;
+    private String invoiceId;
+    private LocalDateTime invoiceDate;
     private Customer customer;
     private double totalAmount;
     private double totalTax;
     private double discount;
     private double finalAmount;
+    private List<InvoiceItem> items;
 
-    public Invoice(int invoiceId, LocalDate invoiceDate, Customer customer, double totalAmount, double totalTax, double discount, double finalAmount) {
+    public Invoice(String invoiceId, LocalDateTime invoiceDate, Customer customer,
+                   double totalAmount, double totalTax, double discount,
+                   double finalAmount, List<InvoiceItem> items) {
         this.invoiceId = invoiceId;
         this.invoiceDate = invoiceDate;
         this.customer = customer;
@@ -20,62 +24,33 @@ public class Invoice {
         this.totalTax = totalTax;
         this.discount = discount;
         this.finalAmount = finalAmount;
+        this.items = items;
     }
 
+    public Invoice(){
 
-    public int getInvoiceId() {
-        return invoiceId;
     }
+    public String getInvoiceId() { return invoiceId; }
+    public void setInvoiceId(String invoiceId) { this.invoiceId = invoiceId; }
 
-    public void setInvoiceId(int invoiceId) {
-        this.invoiceId = invoiceId;
-    }
+    public LocalDateTime getInvoiceDate() { return invoiceDate; }
+    public void setInvoiceDate(LocalDateTime invoiceDate) { this.invoiceDate = invoiceDate; }
 
-    public LocalDate getInvoiceDate() {
-        return invoiceDate;
-    }
+    public Customer getCustomer() { return customer; }
+    public void setCustomer(Customer customer) { this.customer = customer; }
 
-    public void setInvoiceDate(LocalDate invoiceDate) {
-        this.invoiceDate = invoiceDate;
-    }
+    public double getTotalAmount() { return totalAmount; }
+    public void setTotalAmount(double totalAmount) { this.totalAmount = totalAmount; }
 
-    public Customer getCustomer() {
-        return customer;
-    }
+    public double getTotalTax() { return totalTax; }
+    public void setTotalTax(double totalTax) { this.totalTax = totalTax; }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
+    public double getDiscount() { return discount; }
+    public void setDiscount(double discount) { this.discount = discount; }
 
-    public double getTotalAmount() {
-        return totalAmount;
-    }
+    public double getFinalAmount() { return finalAmount; }
+    public void setFinalAmount(double finalAmount) { this.finalAmount = finalAmount; }
 
-    public void setTotalAmount(double totalAmount) {
-        this.totalAmount = totalAmount;
-    }
-
-    public double getTotalTax() {
-        return totalTax;
-    }
-
-    public void setTotalTax(double totalTax) {
-        this.totalTax = totalTax;
-    }
-
-    public double getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(double discount) {
-        this.discount = discount;
-    }
-
-    public double getFinalAmount() {
-        return finalAmount;
-    }
-
-    public void setFinalAmount(double finalAmount) {
-        this.finalAmount = finalAmount;
-    }
+    public List<InvoiceItem> getItems() { return items; }
+    public void setItems(List<InvoiceItem> items) { this.items = items; }
 }

@@ -2,27 +2,27 @@ package com.spring.billingsoftware.entity;
 
 public class InvoiceItem {
 
-private  int id;
-private Product product;
-private int quantity;
-private double price;
-private double taxAmount;
-private double total;
+    private String id;
+    private Product product;
+    private int quantity;
+    private double price;
+    private double taxAmount;
+    private double total;
 
-    public InvoiceItem(int quantity, double taxAmount, double total, double price, Product product, int id) {
+    public InvoiceItem(String id, Product product, int quantity, double price, double taxAmount, double total) {
+        this.id = id;
+        this.product = product;
         this.quantity = quantity;
+        this.price = price;
         this.taxAmount = taxAmount;
         this.total = total;
-        this.price = price;
-        this.product = product;
-        this.id = id;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
